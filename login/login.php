@@ -113,7 +113,7 @@ HEREDOCS;
 	            }else{
 	            	$_mysqli->query("TRANSACTION START;");
 	            	if ($cek1 > 0) {
-						$_mysqli->query("INSERT INTO hak_akses_user VALUES('$nik', 'akses04')");
+						$_mysqli->query("INSERT INTO hak_akses_user (nik, id_akses) VALUES ('$nik', 'akses04')");
 		            	$_mysqli->query("UPDATE penduduk SET username = '$username' , password = '$password' WHERE nik = '$nik'");
 		            	$res = $_mysqli->query("COMMIT");
 		            	if ($res) {
